@@ -11,6 +11,18 @@
 
 <body>
     <header>
+        <nav>
+            <div class="logo">♡ Julee.</div>
+            <div class="menu">
+                <ul>
+                    <li><a href="#caixa2">About</a></li>
+                    <li><a href="#caixa3">Services</a></li>
+                    <li><a href="#caixa4">Where to find me</a></li>
+                </ul>
+            </div>
+            
+        </nav>
+
         <div class="titulo">
             <span>H</span>
             <span>i</span>
@@ -32,8 +44,26 @@
             </svg>
         </div>
     </header>
+    <main>
+        <div class="caixa" id="caixa1">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus dolores repellendus distinctio consequatur, molestiae nemo quasi dicta maiores suscipit. Dolor voluptatem, minus rem qui tempore animi corporis hic alias laudantium!</p>
+        </div>
 
+        <div class="caixa_img" id="caixa2">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero incidunt omnis dignissimos facere ipsam asperiores dolorem. Rem error reprehenderit similique cupiditate obcaecati ut, doloribus magni molestiae suscipit accusamus at voluptatum.</p>
+        </div>
 
+        <div class="caixa" id="caixa3">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita voluptas esse aliquid ducimus, accusantium quisquam atque quibusdam blanditiis dicta? Dolore dignissimos veniam consectetur labore ipsa commodi. Enim minima ducimus ea?</p>
+        </div>
+
+        <div class="caixa_img" id="caixa4">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia deserunt consequuntur ipsa corporis alias est laborum aspernatur doloremque ea maxime, doloribus recusandae sunt ad maiores dolore natus tempore iure ratione!</p>
+        </div>
+
+        <span class="loader"><span class="loader-inner"></span></span>
+
+    </main>
     <div class="curva1">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
             <path fill="#EDD0D6" fill-opacity="1"
@@ -41,12 +71,48 @@
             </path>
         </svg>
     </div>
-
     <footer class="mobile">
         <p> Website created with love 
             &#x1FA77;
              (and some stress too), by <strong>Julia de Oliveira Pacheco Lee</strong>.</p>
     </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+        $(window).scroll(function() {
+            if($(window).scrollTop()) {
+             $("nav").addClass("black");
+
+            }
+            else{
+                $("nav").removeClass("black");  
+            }
+        });
+    </script>
+
+<button onclick="topFunction()" id="myBtn" title="go to top"> &#8593 Top</button>
+
+    <script>
+        let mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+    </script>
+
 </body>
 
 </html>
