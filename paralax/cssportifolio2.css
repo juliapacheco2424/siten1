@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Borel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 @font-face {
     font-family: 'fancy';
     src: url('Market_Deco.ttf');
@@ -55,7 +56,7 @@ body {
 .logo{
     position: fixed;
     float: left;
-    margin: 16px 30px;
+    margin: 16px 13px;
     font-family: 'Borel', cursive;
     color: white;
     font-weight: bold;
@@ -91,11 +92,13 @@ nav ul li a {
     text-decoration: none;
     font-family: 'Poiret One', sans-serif;
     color: white;
-    font-size: 18px;
+    font-size: 15px;
     text-transform: uppercase;
     letter-spacing: 2px;
     transition-duration: 0.5s;
-    margin-left: 50px;
+    padding: 0;
+    margin: 4px 13px;
+
 }
 
 nav ul li a:hover{
@@ -117,9 +120,9 @@ nav ul li a:hover{
     letter-spacing: -8px;  
 }
 
-@media screen and (max-width:650px) {
+@media screen and (max-width:630px) {
     .titulo{
-        font-size: 60px;
+        font-size: 50px;
     }
     
     .mobile{
@@ -142,21 +145,14 @@ nav ul li a:hover{
         height: 500px;
     }
 
-    div#caixa1{
-        margin-top: -36px;
-        padding: 20px;
-        text-align: center;
-        justify-content: center;
-    }
-
     div.caixa_img > p {
         text-align: left;
         position: center;
-        padding: 30px;
+        padding-left: 30px;
         margin-left: -170px;
         height: 500px;
-        width: 300px;
-        font-size: 20px;  
+        width: 250px;
+        font-size: 16px; 
     }
 
     div.caixa_img {
@@ -169,8 +165,17 @@ nav ul li a:hover{
     }
 
     div.caixa > p{
-        font-size: 15px;   
+        font-size: 15px;
+        text-align: justify;   
+        margin-left: 15px;
     }
+
+    /*
+    div#caixa1 > p {
+        text-align: justify;
+        margin-left: 15px;
+        font-size: 15px;
+    } */
     
     div#caixa2 {
         background: linear-gradient(45deg, white, #FFC7D8, #DBA2AE, #F2DBEE, #DFD0FF, #FFDAD5);
@@ -223,26 +228,27 @@ nav ul li a:hover{
         padding-left: 30px;
     }
 
-    ::-webkit-scrollbar {
-        width: 2px;
-      }
-       
-      ::-webkit-scrollbar-track {
-        border-radius: 2px;
-      }
-      
-      ::-webkit-scrollbar-thumb {
-     
-        background-image: linear-gradient(to bottom, #EDD0D6 , #DBA0AE);
-        border-radius: 1px;
-      } 
-    
+    li.about {
+        display: none;
+    }
+
+    li.services{
+        display: none;
+    }   
 }
 
     @media screen and (max-width: 850px) {
     div#caixa1{
         margin-top: -45px;
     }    
+
+    div.caixa_img > p {
+        margin-left: -100px;
+    }
+
+    #myBtn {
+        display: none;
+    }
 }
 
 
@@ -303,14 +309,16 @@ main{
     color: black;
 }
 
- .caixa{
-    width: 100%;
-    height: 500px;
+ .caixa {
+    width: 50%;
+    /* height: 500px; */
     background-color: white;
     background-size: cover;
-    background-size: 300% 300%;
+    /*background-size: 300% 100%; */
     box-sizing: border-box;
     margin: 0;    
+    padding-top: 10vh;
+    padding-bottom: 10vh;
 }  
 
 .container{
@@ -322,6 +330,10 @@ main{
     flex-flow: wrap;
 }
 
+/*  div#caixa11 > p{
+    text-align: justify;  
+} */
+
 .caixa_img {
     /* isso vai ajudar no efeito parallax */
     padding: 20vh;
@@ -330,6 +342,7 @@ main{
     padding-left: 30px;
     margin-left: auto;
     height: 500px;
+    padding-left: 30px;
 }
 
 .caixa_img > p {
@@ -348,13 +361,25 @@ div#caixa2 {
     background-attachment: fixed;   
 }
 
+/*
+div#caixa1{
+    margin-top: -40px;
+}
+
+div#caixa1 > p {
+    text-align: left;
+    margin-left: 9%;
+    justify-content: center;
+}
+
+
 div#caixa3{
     font-size: 15px;
     text-align: left;
     padding: 10px;
     height: 700px;
     margin: 20px;
-}
+} */
 
 div#caixa4{
     background-image: url('imagenscss/Design\ sem\ nome\ \(1\).gif');
@@ -364,10 +389,12 @@ div#caixa4{
 
 .caixa > p{
     font-size: 30px;
-    text-align: left;
+    text-align: justify;
     padding: 10px;
     padding-top: 40px;
     width: 80%;
+    display: block;
+    line-height: 1.5em;
 }
 
 footer{
@@ -402,7 +429,6 @@ footer{
     color: #dd6a898a; /* Text color */
     cursor: pointer; /* Add a mouse pointer on hover */
     padding: 15px; /* Some padding */
-    border-radius: 10px; /* Rounded corners */
     font-size: 18px; /* Increase font size */
     font-family: 'fancy', sans-serif;
   }
@@ -420,6 +446,6 @@ footer{
 
   ::-webkit-scrollbar-thumb {
  
-    background-image: linear-gradient(to bottom, #EDD0D6 , #DBA0AE);
+    background-color: #EDD0D6;
     border-radius: px;
   } 
