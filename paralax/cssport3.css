@@ -1,0 +1,227 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'general';
+    src: url('GeneralSans_Complete/Fonts/OTF/GeneralSans-Medium.otf');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
+
+@keyframes color {
+    0% {
+        background-position: 0 50%;
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav{
+    position: fixed;
+    width: 100%;
+    }
+
+    .logo{
+        position: fixed;
+        float: left;
+        margin: 16px 13px;
+        font-family: 'Borel', cursive;
+        color: white;
+        text-shadow: 2px 2px #EA8CA5;
+        font-weight: bold;
+        font-size: 24px;
+    }    
+
+    nav ul{
+        list-style: none;
+        background-color: #edd0d600;
+        overflow: hidden;
+        color: #EA8CA5;
+        padding: 0;
+        text-align: right;
+        margin: 0;
+        transition: 1s;
+    }
+    
+    
+    nav ul li {
+        display: inline-block;
+        padding: 20px;
+    }
+    
+    nav ul li a {
+        text-decoration: none;
+        font-family: 'general';
+        color: #EA8CA5;
+        font-size: 15px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        transition-duration: 0.5s;
+        padding: 0;
+        margin: 4px 13px;
+    
+    }
+    
+    nav ul li a:hover{
+        background-color: #dd6a897c;
+        color: white;
+        margin: 10px;
+    }    
+
+    @media screen and (max-width:630px) {
+        li.about {
+            display: none;
+        }
+    
+        li.services{
+            display: none;
+        } 
+
+    }
+
+body{
+    overflow: hidden;
+    border: 1px solid rgba(128, 0, 128, 0);
+}
+
+#hello{
+   /* height: 50vw; */
+    width: 80vw; 
+    stroke-dasharray: 1645;
+    animation: 3s fillSvg linear;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes fillSvg{
+    0%{
+        stroke-dashoffset: 1645;
+    }
+    100%{
+        stroke-dashoffset: 0;
+    }
+}
+
+
+.container{
+    /* scroll-snap-type: y mandatory; */
+    overflow-y: scroll;
+    height: 100vh;
+    scroll-behavior: smooth;
+}
+
+section{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   /* scroll-snap-align: start; */
+}
+
+h2{
+    font-family: 'Poiret One', sans-serif;
+    font-size: 6vw;
+    padding: 30px;
+    margin: 2px;
+    text-align: left;
+    text-justify: inter-word;
+}
+
+p {
+    font-size: 3vw;
+    margin: 8px;
+}
+
+h2,
+p {
+    animation: CSSscrollReveal ease-in-out both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 50%;
+}
+
+@keyframes CSSscrollReveal {
+    from{
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.pag1{
+    background-image: url('imagenscss/ezgif.com-optimize.gif');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed; 
+}
+
+svg#hello{
+    height: 80vh;
+}
+
+.pag2{
+    background: linear-gradient(45deg, white, #FFC7D8, #DBA2AE, #F2DBEE, #DFD0FF, #FFDAD5);
+    background-size: 300% 300%;
+    animation: color 12s ease-in-out infinite;
+    background-attachment: fixed;
+    color: white;
+}
+
+.pag3{
+    background-color: green;
+}
+
+.pag4{
+    background-color: blue;
+}
+
+.pag4{
+    background-color: pink;
+}
+
+section.rodape{
+    text-align: center;
+    background-color: #EA8CA5;
+    font-size: 18px;
+    margin-top: -10px;
+    height: 10vh;
+    font-family: 'general';
+    color: white;
+}
+
+
+.curvarodape{
+    align-items: center;
+    width: auto;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+ 
+  ::-webkit-scrollbar-track {
+    border-radius: 5px;
+  }
+  
+
+  ::-webkit-scrollbar-thumb {
+ 
+    background-color: #EDD0D6;
+    border-radius: px;
+  } 
