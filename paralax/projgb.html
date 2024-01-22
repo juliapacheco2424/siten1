@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+#slider {
+   margin: 0 auto;
+   width: 525px;
+   max-width: 100%;
+   text-align: center;
+}
+#slider input[type=radio] {
+   display: none;
+}
+#slider label {
+   cursor:pointer;
+   text-decoration: none;
+}
+#slides {
+   padding: 10px;
+   border: 5px solid #000000;
+   border-radius: 10px;
+   background: #f597c6;
+   box-shadow: inset 5px 0 rgba(255,255,255,0.7), inset -5px 0 #ED63AF ;
+   position: relative;
+   z-index: 1;
+}
+#overflow {
+   width: 100%;
+   overflow: hidden;
+}
+#slide1:checked ~ #slides .inner {
+   margin-left: 0;
+}
+#slide2:checked ~ #slides .inner {
+   margin-left: -100%;
+}
+#slide3:checked ~ #slides .inner {
+   margin-left: -200%;
+}
+#slide4:checked ~ #slides .inner {
+   margin-left: -300%;
+}
+#slides .inner {
+   width: 400%;
+   line-height: 0;
+   height: 500px;
+}
+#slides .slide {
+   width: 25%;
+   float:left;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100%;
+   color: #fff;
+}
+#slides .slide_1 {
+   background-image: url('https://s13.gifyu.com/images/S0fCL.gif');
+}
+#slides .slide_2 {
+   background-image: url('https://s13.gifyu.com/images/S0fC2.gif');
+}
+#slides .slide_3 {
+   background-image: url('https://s13.gifyu.com/images/S0fCS.gif');
+}
+#slides .slide_4 {
+   background: #00A8E8;
+}
+
+
+
+
+#controls {
+   margin: -180px 0 0 0;
+   width: 100%;
+   height: 50px;
+   z-index: 3;
+   position: relative;
+}
+#controls label {
+   transition: opacity 0.2s ease-out;
+   display: none;
+   width: 50px;
+   height: 50px;
+   opacity: .4;
+}
+#controls label:hover {
+   opacity: 1;
+}
+
+#slide1:checked ~ #controls label:nth-child(2),
+#slide2:checked ~ #controls label:nth-child(3),
+#slide3:checked ~ #controls label:nth-child(4),
+#slide4:checked ~ #controls label:nth-child(1) {
+    background-image: url("data:image/svg+xml,%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3E%3C!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools --%3E%3Csvg fill='%23eeb3c3' height='64px' width='64px' version='1.1' id='Icons' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 32 32' xml:space='preserve'%3E%3Cg id='SVGRepo_bgCarrier' stroke-width='0'/%3E%3Cg id='SVGRepo_tracerCarrier' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cg id='SVGRepo_iconCarrier'%3E%3Cpath d='M21,2H11c-5,0-9,4-9,9v10c0,5,4,9,9,9h10c5,0,9-4,9-9V11C30,6,26,2,21,2z M19.7,16.7l-5,5C14.5,21.9,14.3,22,14,22 s-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l4.3-4.3l-4.3-4.3c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l5,5C20.1,15.7,20.1,16.3,19.7,16.7z'/%3E%3C/g%3E%3C/svg%3E"); no-repeat;
+   float:left;
+   margin-top: 40.8px;
+   margin-left: -40px;
+   display: block;
+}
+#slide1:checked ~ #controls label:nth-last-child(2),
+#slide2:checked ~ #controls label:nth-last-child(3),
+#slide3:checked ~ #controls label:nth-last-child(4),
+#slide4:checked ~ #controls label:nth-last-child(1) {
+   background-image: url("data:image/svg+xml,%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3E%3C!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools --%3E%3Csvg fill='%23e7a8b8' height='78px' width='78px' version='1.1' id='Icons' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='-3.2 -3.2 38.40 38.40' xml:space='preserve' transform='rotate(0)' stroke='%23e7a8b8'%3E%3Cg id='SVGRepo_bgCarrier' stroke-width='0'/%3E%3Cg id='SVGRepo_tracerCarrier' stroke-linecap='round' stroke-linejoin='round' stroke='%23CCCCCC' stroke-width='0.064'/%3E%3Cg id='SVGRepo_iconCarrier'%3E%3Cpath d='M21,2H11c-5,0-9,4-9,9v10c0,5,4,9,9,9h10c5,0,9-4,9-9V11C30,6,26,2,21,2z M21.7,18.7C21.5,18.9,21.3,19,21,19 s-0.5-0.1-0.7-0.3L16,14.4l-4.3,4.3c-0.4,0.4-1,0.4-1.4,0s-0.4-1,0-1.4l5-5c0.4-0.4,1-0.4,1.4,0l5,5C22.1,17.7,22.1,18.3,21.7,18.7z '/%3E%3C/g%3E%3C/svg%3E"); no-repeat;
+   float:left;
+   margin-top: 60px;
+   margin-left: -40px;
+   display: block;
+}
+
+#bullet1 {
+   margin: 150px 0 0;
+   text-align: center;
+}
+#bullet1 label {
+   display: inline-block;
+   width: 30px;
+   height: 30px;
+   border-radius:100%;
+   background: #FF0000;
+    margin-left: 20px;
+   float: right;
+   box-shadow: inset 5px 0 rgba(0,0,0,0.2);
+}
+
+#bullet2 {
+   margin: 140px 0 0;
+   text-align: center;
+}
+#bullet2 label {
+   display: inline-block;
+   width: 30px;
+   height: 30px;
+   border-radius:100%;
+   background: #45ad00;
+    margin-left: 20px;
+   float: right;
+   box-shadow: inset 5px 0 rgba(0,0,0,0.2);
+}
+
+#slide1:checked ~ #bullets label:nth-child(4),
+#slide2:checked ~ #bullets label:nth-child(1),
+ {
+   background: #f597c6;
+}
+@media screen and (max-width: 900px) {
+   #slide1:checked ~ #controls label:nth-child(2),
+   #slide2:checked ~ #controls label:nth-child(3),
+   #slide3:checked ~ #controls label:nth-child(4),
+   #slide4:checked ~ #controls label:nth-child(1),
+   #slide1:checked ~ #controls label:nth-last-child(2),
+   #slide2:checked ~ #controls label:nth-last-child(3),
+   #slide3:checked ~ #controls label:nth-last-child(4),
+   #slide4:checked ~ #controls label:nth-last-child(1) {
+      margin: 0;
+   }
+   #slides {
+      max-width: calc(100% - 140px);
+      margin: 0 auto;
+   }
+}
+
+  </style>
+</head>
+<body>
+
+    <div id="slider">
+        <input type="radio" name="slider" id="slide1" checked>
+        <input type="radio" name="slider" id="slide2">
+        <input type="radio" name="slider" id="slide3">
+        <input type="radio" name="slider" id="slide4">
+        <div id="slides">
+           <div id="overflow">
+              <div class="inner">
+                 <div class="slide slide_1">
+                    <div class="slide-content"></div>
+                 </div>
+                 <div class="slide slide_2">
+                    <div class="slide-content"></div>
+                 </div>
+                 <div class="slide slide_3">
+                    <div class="slide-content"></div>
+                 </div>
+                 <div class="slide slide_4">
+                    <div class="slide-content"></div>
+                 </div>
+              </div>
+           </div>
+        </div>
+        <div id="controls">
+           <label for="slide1"></label>
+           <label for="slide2"></label>
+           <label for="slide3"></label>
+           <label for="slide4"></label>
+        </div>
+        <div id="bullet1">
+           <label for="slide1"></label>
+        </div>
+        <div id="bullet2">
+        <label for="slide2"></label>
+        </div>
+     </div>
+     
+     
+</body>
+</html>
